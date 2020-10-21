@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ReactComponent as LogoP1 } from "../assets/images/logo-p1.svg";
-import { ReactComponent as LogoP2 } from "../assets/images/logo-p2.svg";
+import { ReactComponent as LogoP1 } from "../../assets/images/logo-p1.svg";
+import { ReactComponent as LogoP2 } from "../../assets/images/logo-p2.svg";
 
 const Footer = () => {
   return (
@@ -130,5 +130,32 @@ const FooterStyled = styled.footer`
 
   .main-footer_footer-rights > a {
     text-align: right;
+  }
+
+  /* desktop */
+  @media (min-width: 1080px) {
+    .main-footer_content {
+      padding: 1.75rem 7rem 5rem;
+    }
+
+    .main-footer_footer-navigation {
+      padding: 4rem 0 5.5rem;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    .footer-navigation_footer-logo-container,
+    .footer-navigation_email {
+      grid-column: span 2;
+    }
+
+    .footer-navigation_address {
+      justify-self: flex-start;
+    }
+
+    .footer-navigation_email {
+      grid-column: span 2;
+      justify-self: end;
+    }
   }
 `;

@@ -1,11 +1,12 @@
 import React from "react";
 
-import Layout from "./components/layout.component";
+import Layout from "./components/layout/layout.component";
+import ContactPage from "./pages/contact.page";
 
 function App() {
   return (
     <Layout>
-      <h1>Let's talk!</h1>
+      <ContactPage />
     </Layout>
   );
 }

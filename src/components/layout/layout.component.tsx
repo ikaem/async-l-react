@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 
 import Header from "./header.component";
 import Footer from "./footer.component";
 
-import Swansea from "../assets/fonts/Swansea.woff";
-import SwanseaBold from "../assets/fonts/SwanseaBold.woff";
+import Swansea from "../../assets/fonts/Swansea.woff";
+import SwanseaBold from "../../assets/fonts/SwanseaBold.woff";
 
 const Layout: React.FC = ({ children }) => {
+  const [isNavigationActive, setIsNavigationActive] = useState(false);
   return (
     <>
-      <GlobalStyle />
-      <Header />
+      <GlobalStyle isNavigationActive={isNavigationActive} />
+      <Header
+        onSetIsNavigationActive={setIsNavigationActive}
+        isNavigationActive={isNavigationActive}
+      />
       {children}
       <Footer />
     </>
@@ -20,7 +24,7 @@ const Layout: React.FC = ({ children }) => {
 
 export default Layout;
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ isNavigationActive: boolean }>`
     @font-face {
         font-family: "Swansea";
         src: url(${Swansea}) format("woff");
@@ -57,6 +61,7 @@ body,
 
 body {
   overflow-x: hidden;
+  overflow-y: ${(props) => (props.isNavigationActive ? "hidden" : "visible")};
 }
 
 body,

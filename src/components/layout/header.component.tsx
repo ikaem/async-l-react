@@ -1,10 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ReactComponent as LogoP1 } from "../assets/images/logo-p1.svg";
-import { ReactComponent as LogoP2 } from "../assets/images/logo-p2.svg";
+import { ReactComponent as LogoP1 } from "../../assets/images/logo-p1.svg";
+import { ReactComponent as LogoP2 } from "../../assets/images/logo-p2.svg";
 
-const Header: React.FC = () => {
+import HeaderNavigation from "./header-navigation.component";
+
+interface HeaderProps {
+  onSetIsNavigationActive: React.Dispatch<React.SetStateAction<boolean>>;
+  isNavigationActive: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({
+  onSetIsNavigationActive,
+  isNavigationActive,
+}) => {
   return (
     <HeaderStyled>
       <div className="main-header_content">
@@ -12,11 +22,18 @@ const Header: React.FC = () => {
           <LogoP1 />
           <LogoP2 />
         </a>
-        <div className="main-header_navigation-trigger">
+        <div
+          className="main-header_navigation-trigger"
+          onClick={() => onSetIsNavigationActive(true)}
+        >
           <span></span>
           <span></span>
         </div>
       </div>
+      <HeaderNavigation
+        onSetIsNavigationActive={onSetIsNavigationActive}
+        isNavigationActive={isNavigationActive}
+      />
     </HeaderStyled>
   );
 };
@@ -76,5 +93,12 @@ const HeaderStyled = styled.header`
   .main-header_navigation-trigger > span:nth-child(2) {
     width: 65%;
     margin-top: 0.5rem;
+  }
+
+  /* desktop */
+  @media (min-width: 1080px) {
+    .main-header_content {
+      padding: 1.75rem 7rem;
+    }
   }
 `;
