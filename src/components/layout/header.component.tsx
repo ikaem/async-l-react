@@ -71,19 +71,14 @@ const HeaderStyled = styled.header`
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  .main-header_navigation-trigger:hover > span:first-child {
-    width: 65%;
-  }
-  .main-header_navigation-trigger:hover > span:nth-child(2) {
-    width: 100%;
+    cursor: pointer;
   }
 
   .main-header_navigation-trigger > span {
     height: 2px;
     background-color: var(--dark);
     align-self: flex-end;
+    transition: width 200ms ease-in 50ms;
   }
 
   .main-header_navigation-trigger > span:first-child {
@@ -93,6 +88,13 @@ const HeaderStyled = styled.header`
   .main-header_navigation-trigger > span:nth-child(2) {
     width: 65%;
     margin-top: 0.5rem;
+  }
+
+  .main-header_navigation-trigger:hover > span:first-child {
+    width: 65%;
+  }
+  .main-header_navigation-trigger:hover > span:nth-child(2) {
+    width: 100%;
   }
 
   /* desktop */

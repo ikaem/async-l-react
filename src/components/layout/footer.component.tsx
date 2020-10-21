@@ -78,7 +78,27 @@ const FooterStyled = styled.footer`
 
   a {
     color: white;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      top: 20px;
+      opacity: 0;
+      background-color: white;
+      width: 100%;
+      transition: opacity 200ms ease-in;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
   }
+
   .main-footer_content {
     padding: 1.75rem;
     max-width: 1140px;
@@ -98,6 +118,12 @@ const FooterStyled = styled.footer`
   .footer-navigation_email {
     grid-column: span 3;
     justify-self: start;
+  }
+
+  .footer-navigation_email {
+    &::after {
+      top: 30px;
+    }
   }
 
   .footer-navigation_footer-logo-container > svg {
@@ -130,6 +156,7 @@ const FooterStyled = styled.footer`
 
   .main-footer_footer-rights > a {
     text-align: right;
+    padding-bottom: 0.5rem;
   }
 
   /* desktop */

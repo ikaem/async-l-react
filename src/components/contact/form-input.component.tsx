@@ -130,6 +130,7 @@ const FormInputStyled = styled.div<{
     top: ${(props) => (props.inputValue ? "-0.5rem" : "0.5rem")};
     font-size: ${(props) => (props.inputValue ? "0.75rem" : "1rem")};
     color: ${(props) => (props.inputValue ? "var(--darkGray)" : "var(--dark)")};
+    transition: top 100ms ease-in;
   }
 
   .form-input_invalid-input {
