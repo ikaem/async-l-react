@@ -18,7 +18,9 @@ const PageIntro: React.FC<PageIntroProps> = ({
     <PageIntroStyled>
       <h1 className="page-intro_heading">{pageHeading || title}</h1>
       {pageLead && <p className="page-intro_page-lead">{pageLead}</p>}
-      {/* <PageIntroDecor title={title} /> */}
+      <div className="page-intro_decor-wrapper">
+        {/* <PageIntroDecor title={title} /> */}
+      </div>
     </PageIntroStyled>
   );
 };
@@ -29,9 +31,8 @@ const PageIntroStyled = styled.div`
   margin-bottom: 4rem;
 
   .page-intro_heading {
-    font-size: 4.375rem;
-    margin: 1rem 0 2.5rem;
-    line-height: 84px;
+    font-size: 2.5rem;
+    line-height: 120%;
   }
 
   .page-intro_page-lead {
@@ -49,5 +50,9 @@ const PageIntroStyled = styled.div`
   @media (min-width: 1080px) {
     margin-bottom: 6.875rem;
     padding-left: 6.5rem;
+
+    .page-intro_heading {
+      font-size: 4.375rem;
+    }
   }
 `;

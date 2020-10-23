@@ -1,18 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-interface PageIntroDecorProps {
-  title: string;
+interface StepNumberDecorProps {
+  stepNr: string;
 }
 
-const PageIntroDecor: React.FC<PageIntroDecorProps> = ({ title }) => {
+const StepNumberDecor: React.FC<StepNumberDecorProps> = ({ stepNr }) => {
   return (
-    <PageIntroDecorStyled>
+    <StepNumberDecorStyled>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        height="155"
-        viewBox="0 0 400 101"
+        width="400px"
+        viewBox="0 0 400 102"
         className="page-intro-decor absolute"
       >
         <text
@@ -22,29 +21,23 @@ const PageIntroDecor: React.FC<PageIntroDecorProps> = ({ title }) => {
           stroke="#e5e5e5"
           strokeWidth=".6"
           fontFamily="Swansea"
-          fontSize="130px"
+          fontSize="130"
           fontWeight="700"
           transform="translate(-994 -151)"
         >
           <tspan x="990" y="250">
-            {title}
+            {stepNr}
           </tspan>
         </text>
       </svg>
-    </PageIntroDecorStyled>
+    </StepNumberDecorStyled>
   );
 };
 
-export default PageIntroDecor;
+export default StepNumberDecor;
 
-const PageIntroDecorStyled = styled.div`
+const StepNumberDecorStyled = styled.div`
   position: absolute;
-  top: 3.5rem;
-  left: 40rem;
-  width: 100%;
-
-  /* desktop */
-  @media (min-width: 1080px) {
-    top: 7rem;
-  }
+  
+  left: 4px;
 `;

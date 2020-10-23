@@ -79,11 +79,13 @@ const FooterStyled = styled.footer`
   a {
     color: white;
     position: relative;
+    z-index: 0;
 
     &::after {
       content: "";
       display: block;
       position: absolute;
+      z-index: -1;
       height: 1px;
       top: 20px;
       opacity: 0;
@@ -162,7 +164,8 @@ const FooterStyled = styled.footer`
   /* desktop */
   @media (min-width: 1080px) {
     .main-footer_content {
-      padding: 1.75rem 7rem 5rem;
+      /* padding: 1.75rem 7rem 5rem; */
+      padding: 1.75rem 0 5rem;
     }
 
     .main-footer_footer-navigation {

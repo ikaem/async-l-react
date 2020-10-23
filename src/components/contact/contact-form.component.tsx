@@ -253,6 +253,7 @@ const ContactFormStyled = styled.div`
   margin-bottom: 3rem;
   background-color: var(--ligthGray);
   position: relative;
+  /* z-index: -1; */
 
   .form-wrapper_contact-form {
     display: flex;

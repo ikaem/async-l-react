@@ -13,6 +13,7 @@ const HeaderNavigation: React.FC<HeaderNavigation> = ({
   onSetIsNavigationActive,
   isNavigationActive,
 }) => {
+  console.log("this background image", backgroundImage);
   return (
     <HeaderNavigationStyled
       backgroundImage={backgroundImage}
@@ -34,10 +35,14 @@ const HeaderNavigation: React.FC<HeaderNavigation> = ({
 
         <ul className="nav_items">
           <li className="nav__item">
-            <Link to="#">Contact</Link>
+            <Link onClick={() => onSetIsNavigationActive(false)} to="/">
+              Contact
+            </Link>
           </li>
           <li className="nav__item">
-            <Link to="#">Services</Link>
+            <Link onClick={() => onSetIsNavigationActive(false)} to="/services">
+              Services
+            </Link>
           </li>
         </ul>
       </nav>
@@ -56,9 +61,10 @@ const HeaderNavigationStyled = styled.div<{
   right: 0;
   width: 0;
   height: 0;
+  z-index: 99;
 
   .header-navigation_nav {
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     top: 0;
     right: 0;
@@ -70,6 +76,17 @@ const HeaderNavigationStyled = styled.div<{
     background-color: var(--darkGrey);
     display: flex;
     flex-direction: column;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
     &.nav-expand {
       width: 100vw;
@@ -85,6 +102,7 @@ const HeaderNavigationStyled = styled.div<{
 
   .nav_close {
     position: absolute;
+    z-index: 3;
     right: 0;
     top: 0;
     padding: 2rem;
@@ -113,6 +131,7 @@ const HeaderNavigationStyled = styled.div<{
     padding: 8rem 0 0 2rem;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 
     :hover a {
       color: var(--darkGray);

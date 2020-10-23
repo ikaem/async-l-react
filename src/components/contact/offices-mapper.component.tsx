@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-import { officesList } from "../../data/fake-data";
+import { OfficeItemInterface } from "../../data/fake-data";
 
 import OfficeItem from "./office-item.component";
 
-const OfficesMapper: React.FC = () => {
+interface OfficesMapperProps {
+  offices: OfficeItemInterface[];
+}
+
+const OfficesMapper: React.FC<OfficesMapperProps> = ({ offices }) => {
   return (
     <OfficesMapperStyled>
       <ul>
-        {officesList.map((office) => (
+        {offices.map((office) => (
           <OfficeItem {...office} key={office.id} />
         ))}
       </ul>

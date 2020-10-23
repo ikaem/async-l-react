@@ -11,7 +11,7 @@ const Layout: React.FC = ({ children }) => {
   const [isNavigationActive, setIsNavigationActive] = useState(false);
   return (
     <>
-      <GlobalStyle isNavigationActive={isNavigationActive} />
+      <GlobalStyle theme isNavigationActive={isNavigationActive} />
       <Header
         onSetIsNavigationActive={setIsNavigationActive}
         isNavigationActive={isNavigationActive}
@@ -45,6 +45,7 @@ const GlobalStyle = createGlobalStyle<{ isNavigationActive: boolean }>`
   --gray: #d6d6d6;
   --darkGray: #525252;
   --dark: #1d1d1d;
+  --blue: #2396b4;
   --transparent: rgba(18, 18, 18, 0);
 }
 
@@ -70,6 +71,7 @@ a,
 h1,
 h2,
 h3,
+h4,
 p,
 fieldset,
 input,
@@ -86,6 +88,9 @@ input:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+img {
+  display: block;
 }
 
 /* fonts */
