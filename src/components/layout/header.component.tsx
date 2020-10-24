@@ -106,7 +106,6 @@ const HeaderStyled = styled.header`
   /* desktop */
   @media (min-width: 1080px) {
     .main-header_content {
-      /* padding: 1.75rem 7rem; */
       padding: 1.75rem 0;
     }
   }

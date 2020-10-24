@@ -19,7 +19,7 @@ const PageIntro: React.FC<PageIntroProps> = ({
       <h1 className="page-intro_heading">{pageHeading || title}</h1>
       {pageLead && <p className="page-intro_page-lead">{pageLead}</p>}
       <div className="page-intro_decor-wrapper">
-        {/* <PageIntroDecor title={title} /> */}
+        <PageIntroDecor title={title} />
       </div>
     </PageIntroStyled>
   );

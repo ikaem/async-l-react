@@ -164,7 +164,6 @@ const FooterStyled = styled.footer`
   /* desktop */
   @media (min-width: 1080px) {
     .main-footer_content {
-      /* padding: 1.75rem 7rem 5rem; */
       padding: 1.75rem 0 5rem;
     }
 

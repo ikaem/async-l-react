@@ -6,7 +6,6 @@ interface FormInputTypeProps {
   type: string;
   name: string;
   required?: boolean;
-  //
   onSetTouched: React.Dispatch<React.SetStateAction<boolean>>;
   onHandleInputChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
